@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Code JavaDocs</title>
+    <style>
+        .code-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="code-box">
+        <pre>
+            <code>
+                public class CircleCalculator {
+
+                    /**
+                     * Menghitung luas lingkaran berdasarkan jari-jari yang diberikan.
+                     *
+                     * @param radius Jari-jari lingkaran. Harus berupa bilangan positif.
+                     * @return Luas lingkaran.
+                     * @throws IllegalArgumentException jika radius kurang dari atau sama dengan nol.
+                     */
+                    public static double calculateArea(double radius) {
+                        if (radius <= 0) {
+                            throw new IllegalArgumentException("Jari-jari harus lebih besar dari nol.");
+                        }
+                        return Math.PI * radius * radius;
+                    }
+                
+                    /**
+                     * Menghitung keliling lingkaran berdasarkan jari-jari yang diberikan.
+                     *
+                     * @param radius Jari-jari lingkaran. Harus berupa bilangan positif.
+                     * @return Keliling lingkaran.
+                     * @throws IllegalArgumentException jika radius kurang dari atau sama dengan nol.
+                     */
+                    public static double calculateCircumference(double radius) {
+                        if (radius <= 0) {
+                            throw new IllegalArgumentException("Jari-jari harus lebih besar dari nol.");
+                        }
+                        return 2 * Math.PI * radius;
+                    }
+                
+                    /**
+                     * Fungsi utama untuk menguji fungsi calculateArea dan calculateCircumference.
+                     *
+                     * @param args Argumen baris perintah (tidak digunakan dalam fungsi ini).
+                     */
+                    public static void main(String[] args) {
+                        double radius = 7.0;
+                
+                        try {
+                            System.out.println("Luas lingkaran: " + calculateArea(radius));
+                            System.out.println("Keliling lingkaran: " + calculateCircumference(radius));
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("Kesalahan: " + e.getMessage());
+                        }
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+</body>
+</html>
